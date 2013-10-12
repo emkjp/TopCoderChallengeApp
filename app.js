@@ -25,6 +25,10 @@ var Greeter = (function () {
 window.onload = function () {
     var el = document.getElementById('content');
     var greeter = new Greeter(el);
-    greeter.start();
+    //greeter.start();
 };
+
+$(document).ready(function () {
+    $('#content').hide();
+});
 //# sourceMappingURL=app.js.map
