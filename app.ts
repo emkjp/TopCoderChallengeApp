@@ -1,3 +1,7 @@
+/// <reference path="Scripts/typings/jquery/jquery.d.ts" />
+/// <reference path="Scripts/typings/jqueryui/jqueryui.d.ts" />
+/// <reference path="Scripts/typings/angularjs/angular.d.ts" />
+
 class Greeter {
     element: HTMLElement;
     span: HTMLElement;

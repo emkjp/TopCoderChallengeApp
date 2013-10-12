@@ -1,3 +1,6 @@
+/// <reference path="Scripts/typings/jquery/jquery.d.ts" />
+/// <reference path="Scripts/typings/jqueryui/jqueryui.d.ts" />
+/// <reference path="Scripts/typings/angularjs/angular.d.ts" />
 var Greeter = (function () {
     function Greeter(element) {
         this.element = element;
