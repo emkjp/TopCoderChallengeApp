@@ -9,40 +9,48 @@
     <script src="Scripts/jquery-2.0.3.js" type="text/javascript"></script>
     <script src="Scripts/jquery-ui-1.10.3.js" type="text/javascript"></script>
     <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
-    <script src="Scripts/angular.min.js" type="text/javascript"></script>
-    <script src="app.js" type="text/javascript"></script>
+    <script src="Scripts/angularJs/angular.min.js" type="text/javascript"></script>
+    <script src="Scripts/controller/NumberCtrl.js" type="text/javascript"></script>
 </head>
 <body>
-    <h1>TopCoder App</h1>
-    <form class="form-horizontal" role="form">
-        <div class="form-group">
-            <label class="col-sm-1 control-label">最小</label>
-            <div class="col-sm-2">
-                <input type="number" class="form-control" ng-model="minValue" max="{{maxValue}}" />
+    <div ng-controller="NumberGenerator.Controller">
+        <h1>TopCoder App</h1>
+        <form name="numberForm" class="form-horizontal" role="form">
+            <div class="form-group">
+                <div ng-class="{'has-error': numberForm.minValue.$invalid}">
+                    <label class="col-sm-1 control-label">最小</label>
+                    <div class="col-sm-3">
+                        <input name="minValue" type="number" class="form-control" ng-model="minValue" max="{{maxValue}}" required />
+                    </div>
+                </div>
+                <div ng-class="{'has-error': numberForm.maxValue.$invalid}">
+                    <label class="col-sm-1 control-label">最大</label>
+                    <div class="col-sm-3">
+                        <input name="maxValue" type="number" class="form-control" ng-model="maxValue" min="{{minValue}}" required />
+                    </div>
+                </div>
             </div>
-            <label class="col-sm-1 control-label">最大</label>
-            <div class="col-sm-2">
-                <input type="number" class="form-control" ng-model="maxValue" min="{{minValue}} "/>
+            <div class="form-group" ng-class="{'has-error': numberForm.number.$invalid}">
+                <label class="col-sm-1 control-label">個数</label>
+                <div class="col-sm-2">
+                    <input name="number" type="number" class="form-control" ng-model="length" min="1" max="10000" required />
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-1 control-label">個数</label>
-            <div class="col-sm-1">
-                <input type="number" class="form-control" ng-model="length" min="1" max="10000" />
+            <div class="form-group">
+                <label class="col-sm-1 control-label"></label>
+                <div class="col-sm-11">
+                    <input type="button" class="btn btn-primary btn-block" value="生成"
+                        ng-disabled="numberForm.$invalid"
+                        ng-click="generate()" />
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-1 control-label"></label>
-            <div class="col-sm-11">
-                <input type="button" class="btn btn-primary btn-block" value="生成" />
+            <div class="form-group">
+                <label class="col-sm-1 control-label">結果</label>
+                <div class="col-sm-11">
+                    <textarea rows="10" class="form-control" ng-model="resultTextForCode"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-1 control-label">結果</label>
-            <div class="col-sm-11">
-                <textarea rows="3" class="form-control" disabled>{{maxValue}}</textarea>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </body>
 </html>
