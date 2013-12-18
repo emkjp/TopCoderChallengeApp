@@ -123,7 +123,6 @@
     <TypeScriptCompile Include="Scripts\controller\NumberCtrl.ts" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
@@ -395,8 +394,12 @@
     <Content Include="Scripts\typings\jquery\jquery.d.ts" />
     <Content Include="Scripts\ui-bootstrap-0.6.0.js" />
     <Content Include="Scripts\ui-bootstrap-0.6.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap-0.7.0.js" />
+    <Content Include="Scripts\ui-bootstrap-0.7.0.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.6.0.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.6.0.min.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.7.0.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.7.0.min.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
